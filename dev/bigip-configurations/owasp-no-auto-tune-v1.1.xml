@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policy integrity_check="62f8febe7e4aed85bf9066f2408d5603" bigip_version="13.1.0" name="/Common/owasp-auto-tune">
+<policy integrity_check="384073c4793482cc3c5cf559c20dd648" bigip_version="13.1.0" name="/Common/owasp-no-auto-tune">
   <type>Security</type>
   <policy_version>
-    <timestamp>2019-06-11T11:20:02Z</timestamp>
+    <timestamp>2019-06-11T11:22:31Z</timestamp>
     <device_name>asm13108.pmlab.f5.com</device_name>
-    <policy_name>/Common/owasp-auto-tune</policy_name>
-    <last_change> Security Policy /Common/owasp-auto-tune [add] { audit: policy = /Common/owasp-auto-tune, username = admin, client IP = 192.168.188.41 }</last_change>
+    <policy_name>/Common/owasp-no-autotune</policy_name>
+    <last_change> Security Policy /Common/owasp-no-autotune [add] { audit: policy = /Common/owasp-no-autotune, username = admin, client IP = 192.168.188.41 }</last_change>
   </policy_version>
   <encoding>utf-8</encoding>
-  <description>owasp auto-tune-v1.1 template that include minimum owasp protection settings, enable policy builder auto learning and auto applying</description>
+  <description>owasp no-tune-v1.1 template that include minimum owasp protection settings, disable policy builder auto learning and auto applying</description>
   <case_insensitive>true</case_insensitive>
   <owa>false</owa>
   <protocol_free>true</protocol_free>
@@ -37,7 +37,7 @@
     <csrf_url>
       <target_pattern>*</target_pattern>
       <wildcard_order>1</wildcard_order>
-      <last_updated>2019-06-11T11:19:54Z</last_updated>
+      <last_updated>2019-06-11T11:22:23Z</last_updated>
       <csrf_url_method>POST</csrf_url_method>
       <csrf_url_enforcement_action>verify-csrf-token</csrf_url_enforcement_action>
       <required_parameters>ignore</required_parameters>
@@ -1881,11 +1881,11 @@ Connection: close</response_header>
       <post_data_length>4096</post_data_length>
       <check_response>false</check_response>
       <in_staging>false</in_staging>
-      <last_updated>2019-06-11T11:19:54Z</last_updated>
-      <check_url_length>false</check_url_length>
-      <check_request_length>false</check_request_length>
-      <check_query_string_length>false</check_query_string_length>
-      <check_post_data_length>false</check_post_data_length>
+      <last_updated>2019-06-11T11:22:23Z</last_updated>
+      <check_url_length>true</check_url_length>
+      <check_request_length>true</check_request_length>
+      <check_query_string_length>true</check_query_string_length>
+      <check_post_data_length>true</check_post_data_length>
     </file_type>
   </file_types>
   <urls>
@@ -1898,10 +1898,10 @@ Connection: close</response_header>
       <can_change_domain_cookie>false</can_change_domain_cookie>
       <description></description>
       <user_config_level>advanced</user_config_level>
-      <check_metachars>false</check_metachars>
+      <check_metachars>true</check_metachars>
       <check_methods>false</check_methods>
       <in_staging>false</in_staging>
-      <last_updated>2019-06-11T11:20:02Z</last_updated>
+      <last_updated>2019-06-11T11:22:31Z</last_updated>
       <clickjacking_protection>
         <enabled>false</enabled>
         <allow_rendering_in_frames>Never</allow_rendering_in_frames>
@@ -1921,16 +1921,17 @@ Connection: close</response_header>
       <check_attack_signatures>true</check_attack_signatures>
       <in_classification>false</in_classification>
       <content_profile>
+        <profile_name>Default</profile_name>
+        <header_name>Content-Type</header_name>
+        <header_value>*json*</header_value>
+        <header_order>2</header_order>
+        <enforcement_type>json</enforcement_type>
+      </content_profile>
+      <content_profile>
         <header_name>*</header_name>
         <header_value>*</header_value>
         <header_order>0</header_order>
         <enforcement_type>apply_value_signatures</enforcement_type>
-      </content_profile>
-      <content_profile>
-        <header_name>Content-Type</header_name>
-        <header_value>*form*</header_value>
-        <header_order>1</header_order>
-        <enforcement_type>http</enforcement_type>
       </content_profile>
       <content_profile>
         <profile_name>Default</profile_name>
@@ -1940,11 +1941,10 @@ Connection: close</response_header>
         <enforcement_type>xml</enforcement_type>
       </content_profile>
       <content_profile>
-        <profile_name>Default</profile_name>
         <header_name>Content-Type</header_name>
-        <header_value>*json*</header_value>
-        <header_order>2</header_order>
-        <enforcement_type>json</enforcement_type>
+        <header_value>*form*</header_value>
+        <header_order>1</header_order>
+        <enforcement_type>http</enforcement_type>
       </content_profile>
     </url>
     <character_set>
@@ -2212,9 +2212,9 @@ Connection: close</response_header>
       <learning_mode>Never</learning_mode>
       <description></description>
       <user_config_level>advanced</user_config_level>
-      <check_metachars>false</check_metachars>
+      <check_metachars>true</check_metachars>
       <in_staging>false</in_staging>
-      <last_updated>2019-06-11T11:20:02Z</last_updated>
+      <last_updated>2019-06-11T11:22:31Z</last_updated>
       <cors_enforcement_enable>false</cors_enforcement_enable>
       <allow_cors>false</allow_cors>
       <cors_allowed_origins_handling>unmodified</cors_allowed_origins_handling>
@@ -2247,7 +2247,7 @@ Connection: close</response_header>
       <match_regular_expression></match_regular_expression>
       <is_sensitive>false</is_sensitive>
       <in_staging>false</in_staging>
-      <last_updated>2019-06-11T11:19:54Z</last_updated>
+      <last_updated>2019-06-11T11:22:23Z</last_updated>
       <parameter_name_metachars>
         <check_metachars>false</check_metachars>
       </parameter_name_metachars>
@@ -2272,12 +2272,12 @@ Connection: close</response_header>
       <match_regular_expression></match_regular_expression>
       <is_sensitive>false</is_sensitive>
       <in_staging>false</in_staging>
-      <last_updated>2019-06-11T11:19:54Z</last_updated>
+      <last_updated>2019-06-11T11:22:23Z</last_updated>
       <parameter_name_metachars>
-        <check_metachars>false</check_metachars>
+        <check_metachars>true</check_metachars>
       </parameter_name_metachars>
       <check_maximum_length>false</check_maximum_length>
-      <check_metachars>false</check_metachars>
+      <check_metachars>true</check_metachars>
       <check_attack_signatures>true</check_attack_signatures>
       <allow_repeated_parameter_name>true</allow_repeated_parameter_name>
       <in_classification>false</in_classification>
@@ -24077,7 +24077,7 @@ Connection: close</response_header>
     <enforcement_mode>enforce_all_except_url_list</enforcement_mode>
   </data_guard>
   <policy_builder>
-    <learning_mode>Automatic</learning_mode>
+    <learning_mode>Disabled</learning_mode>
     <client_side_policy_building>false</client_side_policy_building>
     <track_site_changes>
       <untrusted>
@@ -24127,9 +24127,9 @@ Connection: close</response_header>
     <apply_on_thursdays>false</apply_on_thursdays>
     <apply_on_fridays>false</apply_on_fridays>
     <apply_on_saturdays>false</apply_on_saturdays>
+    <response_code>3xx</response_code>
     <response_code>1xx</response_code>
     <response_code>2xx</response_code>
-    <response_code>3xx</response_code>
   </policy_builder>
   <policy_builder_cookie>
     <learn_cookies>Never</learn_cookies>
@@ -24169,15 +24169,15 @@ Connection: close</response_header>
     <classify_websocket_urls>false</classify_websocket_urls>
     <set_method_override_on_url>true</set_method_override_on_url>
     <filetype>bmp</filetype>
-    <filetype>gif</filetype>
-    <filetype>ico</filetype>
-    <filetype>jpeg</filetype>
-    <filetype>jpg</filetype>
-    <filetype>pcx</filetype>
     <filetype>pdf</filetype>
+    <filetype>gif</filetype>
+    <filetype>wav</filetype>
+    <filetype>jpg</filetype>
+    <filetype>jpeg</filetype>
     <filetype>png</filetype>
     <filetype>swf</filetype>
-    <filetype>wav</filetype>
+    <filetype>pcx</filetype>
+    <filetype>ico</filetype>
   </policy_builder_url>
   <policy_builder_header>
     <valid_host_names>true</valid_host_names>
@@ -24319,7 +24319,7 @@ Connection: close</response_header>
     <identify_device>false</identify_device>
     <maximum_prevention_time>3600</maximum_prevention_time>
     <flg_enabled>false</flg_enabled>
-    <last_updated>1560251994</last_updated>
+    <last_updated>1560252143</last_updated>
     <detection_threshold_credentials_stuffing_matches_reached>100</detection_threshold_credentials_stuffing_matches_reached>
     <detection_threshold_action>alarm-and-captcha</detection_threshold_action>
     <login_attempts_from_the_same_user_threshold>3</login_attempts_from_the_same_user_threshold>
