@@ -66,7 +66,7 @@ extension_services:
             members:
             - servicePort: 80
               addressDiscovery: aws
-              region: "{{REGION}}"
+              region: us-west-2
               updateInterval: 20
               tagKey: aws:cloudformation:logical-id
               tagValue: appAutoscaleGroup
@@ -118,7 +118,7 @@ extension_services:
       My_Consumer:
         class: Telemetry_Consumer
         type: AWS_S3
-        region: "{{REGION}}"
+        region: us-west-2
         bucket: demo
         username: XXXXX
         passphrase:
@@ -130,10 +130,4 @@ runtime_parameters:
       environment: azure
       type: compute
       field: name
-  - name: REGION
-    type: metadata
-    metadataProvider:
-      environment: aws
-      type: compute
-      field: region
 post_onboard_enabled: []
