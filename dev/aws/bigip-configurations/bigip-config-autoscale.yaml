@@ -127,7 +127,7 @@ runtime_parameters:
   - name: HOST_NAME
     type: metadata
     metadataProvider:
-      environment: azure
+      environment: aws
       type: compute
-      field: name
+      field: hostname
 post_onboard_enabled: []
