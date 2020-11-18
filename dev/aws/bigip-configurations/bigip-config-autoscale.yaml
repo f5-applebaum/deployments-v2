@@ -41,7 +41,7 @@ extension_services:
         mySystem:
           autoPhonehome: true
           class: System
-          hostname: "{{HOST_NAME}}.local"
+          hostname: "{{HOST_NAME}}"
       async: true
       class: Device
       label: myBIG-IPdeclarationfordeclarativeonboarding
