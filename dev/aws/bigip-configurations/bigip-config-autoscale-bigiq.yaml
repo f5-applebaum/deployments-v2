@@ -7,13 +7,13 @@ runtime_parameters:
       environment: aws
       type: compute
       field: hostname
-    - name: BIGIQ_PASSWORD
-      type: secret
-      secretProvider:
-        type: SecretManager
-        environment: aws
-        version: AWSCURRENT
-        secretId: bigiqPass
+  - name: BIGIQ_PASSWORD
+    type: secret
+    secretProvider:
+      type: SecretManager
+      environment: aws
+      version: AWSCURRENT
+      secretId: bigiqPass
 extension_packages:
   install_operations:
   - extensionHash: e7c9acb0ddfc9e9949c48b9a8de686c365764f28347aacf194a6de7e3ed183be
@@ -57,7 +57,7 @@ extension_services:
           licenseType: licensePool
           bigIqHost: 34.210.177.231
           bigIqUsername: demo
-          bigIqPassword: "{{{ BIGIQ_PASSWORD }}}"
+          bigIqPassword: "{{{BIGIQ_PASSWORD}}}"
           licensePool: myUtilityPool1
           skuKeyword1: F5-BIG-MSP-BT-1G-IPI
           skuKeyword2: myAutoscaleTenant1
@@ -68,7 +68,7 @@ extension_services:
         mySystem:
           autoPhonehome: true
           class: System
-          hostname: "{{ HOST_NAME }}"
+          hostname: "{{HOST_NAME}}"
       async: true
       class: Device
       label: myBIG-IPdeclarationfordeclarativeonboarding
