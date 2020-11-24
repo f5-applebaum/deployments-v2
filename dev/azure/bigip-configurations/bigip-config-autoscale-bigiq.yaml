@@ -60,8 +60,8 @@ extension_services:
           bigIqPassword: "{{{ BIGIQ_PASSWORD }}}"
           licensePool: myUtilityPool1
           skuKeyword1: F5-BIG-MSP-BT-1G-IPI
-          skuKeyword2: myAutoscaleTenant1
-          unitOfMeasure: hourly
+          skuKeyword2: 
+          unitOfMeasure: yearly
           hypervisor: azure
           reachable: false
           overwrite: false
