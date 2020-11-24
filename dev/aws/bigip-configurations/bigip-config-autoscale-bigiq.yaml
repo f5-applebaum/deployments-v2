@@ -16,14 +16,14 @@ runtime_parameters:
       secretId: bigiqPass
 extension_packages:
   install_operations:
-  - extensionHash: e7c9acb0ddfc9e9949c48b9a8de686c365764f28347aacf194a6de7e3ed183be
-    extensionType: do
-    extensionVersion: 1.13.0
-  - extensionHash: ba2db6e1c57d2ce6f0ca20876c820555ffc38dd0a714952b4266c4daf959d987
-    extensionType: as3
+  - extensionType: do
+    extensionHash: 536eccb9dbf40aeabd31e64da8c5354b57d893286ddc6c075ecc9273fcca10a1
+    extensionVersion: 1.16.0
+  - extensionType: as3
+    extensionHash: ba2db6e1c57d2ce6f0ca20876c820555ffc38dd0a714952b4266c4daf959d987
     extensionVersion: 3.20.0
-  - extensionHash: d52ad1ca23df1d9c81a9e3641fc25b593dd0c0a17cc3a90316067ae78e41a990
-    extensionType: ts
+  - extensionType: ts
+    extensionHash: d52ad1ca23df1d9c81a9e3641fc25b593dd0c0a17cc3a90316067ae78e41a990
     extensionVersion: 1.12.0
 extension_services:
   service_operations:
@@ -62,6 +62,7 @@ extension_services:
           skuKeyword1: F5-BIG-MSP-BT-1G-IPI
           skuKeyword2: 
           unitOfMeasure: yearly
+          tenant: myautoscale1
           reachable: false
           overwrite: false
           hypervisor: aws
