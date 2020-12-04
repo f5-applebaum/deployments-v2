@@ -37,7 +37,7 @@ extension_services:
           provision.extramb: 500
           restjavad.useextramb: true
           ui.advisory.enabled: true
-          ui.advisory.color: blue
+          ui.advisory.color: green
           ui.advisory.text: "Provisioned via Runtime Init and DO"
         myDns:
           class: DNS
@@ -57,7 +57,7 @@ extension_services:
           licenseType: licensePool
           bigIqHost: 34.210.177.231
           bigIqUsername: demo
-          bigIqPassword: "{{ BIGIQ_PASSWORD }}"
+          bigIqPassword: "{{{ BIGIQ_PASSWORD }}}"
           licensePool: myUtilityPool1
           reachable: false
           hypervisor: azure
@@ -110,7 +110,7 @@ extension_services:
             pool: "/Tenant_1/Shared/shared_pool"
           WAFPolicy:
             ignoreChanges: true
-            url: https://raw.githubusercontent.com/f5-applebaum/deployments-v2/0.0.1/dev/aws/bigip-configurations/owasp-no-auto-tune-v1.1.xml
+            url: https://raw.githubusercontent.com/f5-applebaum/deployments-v2/0.0.2/dev/aws/bigip-configurations/owasp-auto-tune-v1.1.xml
             class: WAF_Policy
         HTTPS_Service:
           template: https
@@ -128,7 +128,7 @@ extension_services:
             class: Service_HTTPS
           WAFPolicy:
             ignoreChanges: true
-            url: https://raw.githubusercontent.com/f5-applebaum/deployments-v2/0.0.1/dev/aws/bigip-configurations/owasp-no-auto-tune-v1.1.xml
+            url: https://raw.githubusercontent.com/f5-applebaum/deployments-v2/0.0.2/dev/aws/bigip-configurations/owasp-auto-tune-v1.1.xml
             class: WAF_Policy
   - extensionType: ts
     type: inline
