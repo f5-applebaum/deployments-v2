@@ -7,6 +7,10 @@ runtime_parameters:
       environment: aws
       type: compute
       field: hostname
+  - name: REGION
+    type: url
+    value: http://169.254.169.254/latest/dynamic/instance-identity/document
+    query: region
 extension_packages:
   install_operations:
   - extensionType: do
@@ -30,7 +34,7 @@ extension_services:
           provision.extramb: 500
           restjavad.useextramb: true
           ui.advisory.enabled: true
-          ui.advisory.color: green
+          ui.advisory.color: blue
           ui.advisory.text: "Provisioned via Runtime Init and DO"
         myDns:
           class: DNS
@@ -48,7 +52,7 @@ extension_services:
         mySystem:
           autoPhonehome: true
           class: System
-          hostname: "{{HOST_NAME}}"
+          hostname: '{{{ HOST_NAME }}}'
       async: true
       class: Device
       label: myBIG-IPdeclarationfordeclarativeonboarding
@@ -73,7 +77,7 @@ extension_services:
             members:
             - servicePort: 80
               addressDiscovery: aws
-              region: us-west-2
+              region: '{{{ REGION }}}'
               updateInterval: 20
               tagKey: aws:cloudformation:logical-id
               tagValue: appAutoscaleGroup
@@ -91,7 +95,7 @@ extension_services:
             pool: "/Tenant_1/Shared/shared_pool"
           WAFPolicy:
             ignoreChanges: true
-            url: https://raw.githubusercontent.com/f5-applebaum/deployments-v2/0.0.2/dev/aws/bigip-configurations/owasp-auto-tune-v1.1.xml
+            url: https://raw.githubusercontent.com/f5-applebaum/deployments-v2/0.0.1/dev/aws/bigip-configurations/owasp-no-auto-tune-v1.1.xml
             class: WAF_Policy
         HTTPS_Service:
           template: https
@@ -109,7 +113,7 @@ extension_services:
             class: Service_HTTPS
           WAFPolicy:
             ignoreChanges: true
-            url: https://raw.githubusercontent.com/f5-applebaum/deployments-v2/0.0.2/dev/aws/bigip-configurations/owasp-auto-tune-v1.1.xml
+            url: https://raw.githubusercontent.com/f5-applebaum/deployments-v2/0.0.1/dev/aws/bigip-configurations/owasp-no-auto-tune-v1.1.xml
             class: WAF_Policy
   - extensionType: ts
     type: inline
@@ -125,7 +129,7 @@ extension_services:
       My_Consumer:
         class: Telemetry_Consumer
         type: AWS_S3
-        region: us-west-2
+        region: '{{{ REGION }}}'
         bucket: demo
         username: XXXXX
         passphrase:
