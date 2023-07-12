@@ -9,7 +9,7 @@
 Response Action Type was set to Custom. { audit: policy = /Tenant_1/Shared/Custom_WAF_Policy, username = admin, client IP = 172.18.13.75 }</last_change>
   </policy_version>
   <encoding>utf-8</encoding>
-  <description>owasp auto-tune-v1.1 template that include minimum owasp protection settings, enable policy builder auto learning and auto applying</description>
+  <description>Blue: owasp auto-tune-v1.1 template that include minimum owasp protection settings, enable policy builder auto learning and auto applying</description>
   <case_insensitive>true</case_insensitive>
   <owa>false</owa>
   <managed_by_bewaf>false</managed_by_bewaf>
