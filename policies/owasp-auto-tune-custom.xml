@@ -9,7 +9,7 @@
 Response Action Type was set to Custom. { audit: policy = /Tenant_1/Shared/Custom_WAF_Policy, username = admin, client IP = 172.18.13.75 }</last_change>
   </policy_version>
   <encoding>utf-8</encoding>
-  <description>Blue: owasp auto-tune-v1.1 template that include minimum owasp protection settings, enable policy builder auto learning and auto applying</description>
+  <description>Green: owasp auto-tune-v1.1 template that include minimum owasp protection settings, enable policy builder auto learning and auto applying</description>
   <case_insensitive>true</case_insensitive>
   <owa>false</owa>
   <managed_by_bewaf>false</managed_by_bewaf>
@@ -704,7 +704,7 @@ Response Action Type was set to Custom. { audit: policy = /Tenant_1/Shared/Custo
 Cache-Control: no-cache
 Pragma: no-cache
 Connection: close</response_header>
-      <response_html_code>&lt;html>&lt;head>&lt;title>Request Rejected&lt;/title>&lt;/head>&lt;body>The requested URL was rejected. Please contact Support.&lt;br>&lt;br>Your support ID is: &lt;%TS.request.ID()%>&lt;br>&lt;br>&lt;a href='javascript:history.back();'>[Go Back]&lt;/a>&lt;/body>&lt;/html></response_html_code>
+      <response_html_code>&lt;html>&lt;head>&lt;title>Request Rejected&lt;/title>&lt;/head>&lt;body>The requested URL was rejected. Please contact Support 1-800-111-11111&lt;br>&lt;br>Your support ID is: &lt;%TS.request.ID()%>&lt;br>&lt;br>&lt;a href='javascript:history.back();'>[Go Back]&lt;/a>&lt;/body>&lt;/html></response_html_code>
       <ajax_action_type>redirect</ajax_action_type>
     </response_page>
     <response_page cause="XML">
