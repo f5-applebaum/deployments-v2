@@ -3,7 +3,7 @@
   <type>Security</type>
   <policy_version>
     <timestamp>2023-07-12T17:08:51Z</timestamp>
-    <device_name>bigip-sea-1.example.com</device_name>
+    <device_name>staging.example.com</device_name>
     <policy_name>/Tenant_1/Shared/Custom_WAF_Policy</policy_name>
     <last_change>Response Page Default Response Page Properties [update]: Response Content was set to &lt;html&gt;&lt;head&gt;&lt;title&gt;Request Rejected&lt;/title&gt;&lt;/head&gt;&lt;body&gt;The requested URL was rejected. Please contact Support.&lt;br&gt;&lt;br&gt;Your support ID is: &lt;%TS.request.ID()%&gt;&lt;br&gt;&lt;br&gt;&lt;a href='javascript:history.back();'&gt;[Go Back]&lt;/a&gt;&lt;/body&gt;&lt;/html&gt;.
 Response Action Type was set to Custom. { audit: policy = /Tenant_1/Shared/Custom_WAF_Policy, username = admin, client IP = 172.18.13.75 }</last_change>
